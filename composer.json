@@ -1,0 +1,14 @@
+{
+    "name": "olavocn/core",
+    "authors": [
+        {
+            "name": "Olavo Neto",
+            "email": "olavocn.neto@gmail.com"
+        }
+    ],
+    "require": {
+        "pimple/pimple": "~2.1@dev",
+        "olavocn/buscape-php": "dev-master",
+        "zendframework/zend-db": "dev-master"
+    }
+}
