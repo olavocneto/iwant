@@ -15,7 +15,19 @@ class Application extends Container
     {
         parent::__construct();
 
+        $app = $this;
+
+        $app['version'] = '1.0.0.0';
+    }
+
+    protected function initialize() {
         $this->initDatabase();
+
+        return $this;
+    }
+
+    protected function run() {
+        
     }
 
     protected function initDatabase() {
