@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use Core\Application;
 use Apiki_Buscape_API;
 
 /**
@@ -11,5 +12,17 @@ use Apiki_Buscape_API;
  */
 class Brain
 {
-    //put your code here
+
+    /**
+     *
+     * @var Core\Application
+     */
+    protected $app;
+
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
+
+    public function 
 }
