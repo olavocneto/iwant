@@ -3,7 +3,7 @@
 namespace Core;
 
 use Core\Application;
-use Apiki_Buscape_API;
+use Core\Search;
 
 /**
  * Description of Brain
@@ -24,5 +24,26 @@ class Brain
         $this->app = $app;
     }
 
-    public function 
+    public function think()
+    {
+        $args = [
+            'keyword' => 'tv'
+        ];
+
+         $offer = $this->offer($args);
+
+         $s = new Search('TV philips 42 polegadas');
+
+         foreach ($offer->offer as $off) {
+             $s->setOffer($off);
+             $s->process();
+         }
+
+         return $s->theBest();
+    }
+
+    protected function offer(array $args)
+    {
+        return json_decode($this->app['BuscapeAPI']->findOfferList($args));
+    }
 }
